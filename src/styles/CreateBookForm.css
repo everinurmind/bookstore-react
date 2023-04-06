@@ -36,7 +36,7 @@
   width: 15%;
 }
 
-.create-book-form button {
+.create-book-form #add-book {
   background-color: #0290ff;
   border: none;
   border-radius: 5px;
@@ -48,6 +48,6 @@
   text-transform: uppercase;
 }
 
-.create-book-form button:active {
+.create-book-form #add-book:active {
   background-color: #1c77b9;
 }

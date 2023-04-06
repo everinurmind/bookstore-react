@@ -11,10 +11,17 @@
 }
 
 .book-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   padding: 20px;
+}
+
+.book-list li div {
+  background-color: #fff;
 }
 
 .book-list li h3 {
@@ -30,17 +37,19 @@
   text-decoration: none;
 }
 
-.book-list button {
+.book-list #remove-book {
   background-color: #0290ff;
   border: none;
   border-radius: 5px;
   color: #fff;
   cursor: pointer;
   font-size: 12px;
-  padding: 5px 10px;
+  padding: 10px 20px;
+  height: 35px;
+  width: 12%;
   text-transform: uppercase;
 }
 
-.book-list button:active {
+.book-list #remove-book:active {
   background-color: #1c77b9;
 }

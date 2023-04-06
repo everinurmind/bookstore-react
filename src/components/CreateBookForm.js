@@ -23,7 +23,7 @@ function CreateBookForm({ addBook }) {
           <option value="Book author 2">Book author 2</option>
           <option value="Book author 3">Book author 3</option>
         </select>
-        <button type="submit">Add Book</button>
+        <button type="submit" id="add-book">Add Book</button>
       </form>
     </div>
   );
