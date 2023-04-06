@@ -16,6 +16,9 @@ function BookList() {
           <li key={book.id}>
             <h3>{book.title}</h3>
             <p>{book.category}</p>
+            <button type="submit" onClick={() => setBooks(books.filter((b) => b.id !== book.id))}>
+              Remove book
+            </button>
           </li>
         ))}
       </ul>

@@ -18,11 +18,10 @@ function CreateBookForm({ addBook }) {
       <h2>Add New Book</h2>
       <form onSubmit={handleSubmit}>
         <input type="text" name="book-title" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Book title" />
-        <select id="book-category" name="book-category" value={category} onChange={(e) => setCategory(e.target.value)}>
-          <option value="">Category</option>
-          <option value="option1">Option 1</option>
-          <option value="option2">Option 2</option>
-          <option value="option3">Option 3</option>
+        <select id="book-author" name="book-author" value={category} onChange={(e) => setCategory(e.target.value)}>
+          <option value="Book author 1">Book author</option>
+          <option value="Book author 2">Book author 2</option>
+          <option value="Book author 3">Book author 3</option>
         </select>
         <button type="submit">Add Book</button>
       </form>

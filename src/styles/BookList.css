@@ -27,6 +27,20 @@
   background-color: #fff;
   color: #1c77b9;
   font-size: 12px;
-  margin-bottom: 0;
   text-decoration: none;
+}
+
+.book-list button {
+  background-color: #0290ff;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 5px 10px;
+  text-transform: uppercase;
+}
+
+.book-list button:active {
+  background-color: #1c77b9;
 }
