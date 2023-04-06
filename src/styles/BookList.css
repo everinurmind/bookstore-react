@@ -1,0 +1,55 @@
+/* Styles for the book list */
+.book-list {
+  margin: 0 70px;
+  padding: 20px;
+}
+
+.book-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.book-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.book-list li div {
+  background-color: #fff;
+}
+
+.book-list li h3 {
+  background-color: #fff;
+  font-size: 24px;
+  margin: 0 auto;
+}
+
+.book-list li p {
+  background-color: #fff;
+  color: #1c77b9;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.book-list #remove-book {
+  background-color: #0290ff;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 10px 20px;
+  height: 35px;
+  width: 12%;
+  text-transform: uppercase;
+}
+
+.book-list #remove-book:active {
+  background-color: #1c77b9;
+}

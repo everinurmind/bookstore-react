@@ -1,0 +1,53 @@
+/* Styles for the create book form */
+.create-book-form {
+  margin-top: 40px;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.create-book-form h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #ccc;
+  text-transform: uppercase;
+}
+
+.create-book-form form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 25px;
+}
+
+.create-book-form input {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #ccc;
+  font-size: 12px;
+  padding: 10px;
+  width: 70%;
+}
+
+.create-book-form select {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #ccc;
+  font-size: 12px;
+  padding: 10px;
+  width: 15%;
+}
+
+.create-book-form #add-book {
+  background-color: #0290ff;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 10px 20px;
+  width: 15%;
+  text-transform: uppercase;
+}
+
+.create-book-form #add-book:active {
+  background-color: #1c77b9;
+}
