@@ -1,17 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CreateBookForm from './CreateBookForm';
 import '../styles/BookList.css';
 
 function BookList() {
+  const [books, setBooks] = useState([]);
+
+  const addBook = (book) => {
+    setBooks([...books, book]);
+  };
+
   return (
     <div className="book-list">
       <ul>
-        <li>
-          <h3>Book Title</h3>
-          <a href="/">Author Name</a>
-        </li>
+        {books.map((book) => (
+          <li key={book.id}>
+            <h3>{book.title}</h3>
+            <p>{book.category}</p>
+          </li>
+        ))}
       </ul>
-      <CreateBookForm />
+      <CreateBookForm addBook={addBook} />
     </div>
   );
 }
