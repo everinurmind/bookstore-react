@@ -2,6 +2,8 @@
 
 - [📖 About the Project](#about-project)
 - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -20,7 +22,7 @@
 
 Hello! Here you will see the Bookstore React application. 
 
-## 🛠 Built With React + Vite <a name="built-with"></a>
+## 🛠 Built With React <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
@@ -37,6 +39,14 @@ Hello! Here you will see the Bookstore React application.
     <li><a href="https://github.com/">GitHub</a></li>
   </ul>
 </details>
+
+### Key Features <a name="key-features"></a>
+
+- [adding react app main page] **[Home Page]**
+- [adding routes] **[Books / Categories]**
+- [implementing add book section] **[Adding new book feature]**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
