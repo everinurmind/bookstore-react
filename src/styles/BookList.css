@@ -37,6 +37,10 @@
   text-decoration: none;
 }
 
+#category {
+  color: #999;
+}
+
 .book-list #remove-book {
   background-color: #0290ff;
   border: none;
