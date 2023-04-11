@@ -1,15 +1,25 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { addBook } from '../redux/books/booksSlice';
 import '../styles/CreateBookForm.css';
 
-function CreateBookForm({ addBook }) {
+function CreateBookForm() {
   const [title, setTitle] = useState('');
+  const [author, setAuthor] = useState('');
   const [category, setCategory] = useState('');
+  const dispatch = useDispatch();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    addBook({ title, category });
+    const newBook = {
+      id: Date.now(),
+      title,
+      author,
+      category,
+    };
+    dispatch(addBook(newBook));
     setTitle('');
+    setAuthor('');
     setCategory('');
   };
 
@@ -18,19 +28,18 @@ function CreateBookForm({ addBook }) {
       <h2>Add New Book</h2>
       <form onSubmit={handleSubmit}>
         <input type="text" name="book-title" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Book title" />
-        <select id="book-author" name="book-author" value={category} onChange={(e) => setCategory(e.target.value)}>
-          <option value="Book author 1">Book author</option>
-          <option value="Book author 2">Book author 2</option>
-          <option value="Book author 3">Book author 3</option>
+        <input type="text" name="book-author" value={author} onChange={(e) => setAuthor(e.target.value)} placeholder="Book author" />
+        <select id="book-category" name="book-category" value={category} onChange={(e) => setCategory(e.target.value)}>
+          <option value="" disabled selected hidden>Category</option>
+          <option value="Action">Action</option>
+          <option value="Fiction">Fiction</option>
+          <option value="Nonfiction">Nonfiction</option>
         </select>
+
         <button type="submit" id="add-book">Add Book</button>
       </form>
     </div>
   );
 }
-
-CreateBookForm.propTypes = {
-  addBook: PropTypes.func.isRequired,
-};
 
 export default CreateBookForm;
