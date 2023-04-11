@@ -1,35 +1,40 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import CreateBookForm from './CreateBookForm';
+import { removeBook } from '../redux/books/booksSlice';
 import '../styles/BookList.css';
 
-function BookList() {
-  const [books, setBooks] = useState([]);
+const BookList = () => {
+  const books = useSelector((state) => state.books.books);
+  const dispatch = useDispatch();
 
-  const addBook = (book) => {
-    const newBook = { ...book, id: Date.now() };
-    setBooks([...books, newBook]);
-  };
-
-  const removeBook = (book) => {
-    setBooks(books.filter((b) => b.id !== book.id));
+  const handleRemoveBook = (id) => {
+    dispatch(removeBook({ id }));
   };
 
   return (
     <div className="book-list">
       <ul>
-        {books.map((book) => (
+        {books && books.map((book) => (
           <li key={book.id}>
             <div>
+              <p id="category">
+                {' '}
+                {book.category}
+              </p>
               <h3>{book.title}</h3>
-              <p>{book.category}</p>
+              <p id="author">
+                {' '}
+                {book.author}
+              </p>
             </div>
-            <button type="button" id="remove-book" onClick={() => removeBook(book)}>Remove book</button>
+            <button type="button" id="remove-book" onClick={() => handleRemoveBook(book.id)}>Remove book</button>
           </li>
         ))}
       </ul>
-      <CreateBookForm addBook={addBook} />
+      <CreateBookForm />
     </div>
   );
-}
+};
 
 export default BookList;
