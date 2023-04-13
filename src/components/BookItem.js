@@ -2,7 +2,6 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { fetchBooks, removeBook } from '../redux/books/booksSlice';
-import '../styles/BookItem.css';
 
 const BookItem = ({
   id, title, author, category,
@@ -20,19 +19,17 @@ const BookItem = ({
   };
 
   return (
-    <div className="book-list">
-      <ul>
-        <li>
-          <div>
-            <p id="category">{category}</p>
-            <h3>{title}</h3>
-            <p id="author">{author}</p>
-          </div>
-          <button type="button" id="remove-book" onClick={() => handleRemove()}>Remove Book</button>
-        </li>
-      </ul>
+    <ul>
+      <li>
+        <div>
+          <p id="category">{category}</p>
+          <h3>{title}</h3>
+          <p id="author">{author}</p>
+        </div>
+        <button type="button" id="remove-book" onClick={() => handleRemove()}>Remove Book</button>
+      </li>
       {isDeleted && <p>The book was deleted successfully!</p>}
-    </div>
+    </ul>
   );
 };
 

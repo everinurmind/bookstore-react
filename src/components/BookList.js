@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { fetchBooks } from '../redux/books/booksSlice';
 import BookItem from './BookItem';
 import CreateBookForm from './CreateBookForm';
+import '../styles/BookList.css';
 
 const BookList = () => {
   const {
@@ -28,14 +29,12 @@ const BookList = () => {
   ));
 
   return (
-    <>
+    <div className="book-list">
       {loading && <h2>Loading...</h2>}
       {error && <h2>{error}</h2>}
-      <ul>
-        {bookItems}
-      </ul>
+      {bookItems}
       <CreateBookForm />
-    </>
+    </div>
   );
 };
 
