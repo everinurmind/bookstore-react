@@ -1,13 +1,13 @@
 /* Styles for the create book form */
 .create-book-form {
   margin-top: 40px;
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  border-top: 1px solid #e8e8e8;
 }
 
 .create-book-form h2 {
-  font-size: 24px;
+  font-size: 20px;
   margin-bottom: 20px;
-  color: #ccc;
+  color: #888;
   text-transform: uppercase;
 }
 
@@ -19,31 +19,39 @@
 }
 
 .create-book-form input {
-  border: 1px solid #ccc;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  border: 1px solid #e8e8e8;
   border-radius: 5px;
-  color: #ccc;
+  color: #c4c4c4;
+  background-color: #fff;
   font-size: 12px;
-  padding: 10px;
-  width: 70%;
+  padding: 15px;
+  width: 60%;
 }
 
 .create-book-form select {
-  border: 1px solid #ccc;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  border: 1px solid #e8e8e8;
   border-radius: 5px;
-  color: #ccc;
+  color: #c4c4c4;
+  background-color: #fff;
   font-size: 12px;
-  padding: 10px;
-  width: 15%;
+  padding: 15px;
+  width: 25%;
 }
 
 .create-book-form #add-book {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
   background-color: #0290ff;
   border: none;
   border-radius: 5px;
   color: #fff;
   cursor: pointer;
   font-size: 12px;
-  padding: 10px 20px;
+  padding: 15px 20px;
   width: 15%;
   text-transform: uppercase;
 }

@@ -21,12 +21,28 @@ const BookItem = ({
   return (
     <ul>
       <li>
-        <div>
+        <div className="main-sec">
           <p id="category">{category}</p>
-          <h3>{title}</h3>
+          <h3 id="title">{title}</h3>
           <p id="author">{author}</p>
+          <button type="button" id="comment-book">Comments</button>
+          <button type="button" id="remove-book" onClick={() => handleRemove()}>Remove</button>
+          <button type="button" id="edit-book">Edit</button>
         </div>
-        <button type="button" id="remove-book" onClick={() => handleRemove()}>Remove Book</button>
+        <div className="second-sec">
+          <div className="circle">
+            <div className="circle-inner" />
+          </div>
+          <div className="percentage-sec">
+            <p id="percentage">64%</p>
+            <p id="completed">Completed</p>
+          </div>
+        </div>
+        <div className="chapter-sec">
+          <p id="chapter">Current Chapter</p>
+          <p id="chapter-num">Chapter 17</p>
+          <button type="button" id="update-book">Update Progress</button>
+        </div>
       </li>
       {isDeleted && <p>The book was deleted successfully!</p>}
     </ul>
