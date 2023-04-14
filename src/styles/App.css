@@ -12,8 +12,8 @@ nav {
   align-items: center;
   justify-content: flex-start;
   background-color: #fff;
-  gap: 40px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  gap: 30px;
+  border-bottom: 1px solid #e8e8e8;
 }
 
 nav ul {
@@ -25,7 +25,7 @@ nav ul {
 }
 
 nav li {
-  margin-right: 40px;
+  margin-right: 30px;
 }
 
 nav li:last-child {
