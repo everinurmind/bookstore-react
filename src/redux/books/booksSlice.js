@@ -45,6 +45,22 @@ export const removeBook = createAsyncThunk(
   },
 );
 
+export const editBook = createAsyncThunk(
+  'books/editBook',
+  async ({ id, updatedBook }, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.put(`${URL + API_ID}/books/${id}`, updatedBook, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  },
+);
+
 const initialState = {
   books: [],
   loading: false,
@@ -57,6 +73,7 @@ const booksSlice = createSlice({
   initialState,
   extraReducers: (builder) => {
     builder
+      // fetchBooks cases
       .addCase(fetchBooks.pending, (state) => {
         state.loading = true;
       })
@@ -70,6 +87,7 @@ const booksSlice = createSlice({
         state.success = false;
         state.error = action.payload;
       })
+      // addBook cases
       .addCase(addBook.pending, (state) => {
         state.loading = true;
       })
@@ -82,6 +100,7 @@ const booksSlice = createSlice({
         state.success = false;
         state.error = action.payload;
       })
+      // removeBook cases
       .addCase(removeBook.pending, (state) => {
         state.loading = true;
       })
@@ -90,6 +109,25 @@ const booksSlice = createSlice({
         state.success = true;
       })
       .addCase(removeBook.rejected, (state, action) => {
+        state.loading = false;
+        state.success = false;
+        state.error = action.payload;
+      })
+      // editBook cases
+      .addCase(editBook.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(editBook.fulfilled, (state, action) => {
+        state.loading = false;
+        state.success = true;
+        state.books = state.books.map((book) => {
+          if (book.id === action.payload.id) {
+            return action.payload;
+          }
+          return book;
+        });
+      })
+      .addCase(editBook.rejected, (state, action) => {
         state.loading = false;
         state.success = false;
         state.error = action.payload;
